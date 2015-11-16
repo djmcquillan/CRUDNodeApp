@@ -35,13 +35,14 @@ app.get('/', function(req, res) {
 })
 
 app.get('/index', function(req,res){
-	//response, rendering the home page view, and setting second argument as object 
+	//response, rendering the home page view, and setting second argument as object
 	res.render('index')
 })
 
 app.get('/create', function(req,res){
-	//response, rendering the home page view, and setting second argument as object 
-	res.render('create')
+	//response, rendering the home page view, and setting second argument as object
+	res.render('create', {title: "Enter a new beer"})
+	console.log('We are in the create function')
 })
 
 //use beer routes for those routes
@@ -50,5 +51,3 @@ app.use('/beers', beerRoutes)
 //sets the port for the server
 app.listen(port)
 console.log('Server started on', port)
-
-
